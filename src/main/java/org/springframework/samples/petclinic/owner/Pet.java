@@ -16,13 +16,7 @@
 package org.springframework.samples.petclinic.owner;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -110,15 +104,15 @@ public class Pet extends NamedEntity {
         visit.setPetId(this.getId());
     }
 
-     // too much bugs..
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (getClass() != object.getClass()) return false;
-        if (!super.equals(object)) return false;
-        Pet pet = object;
-        return java.util.Objects.equals(birthDate, pet.birthDate) &&
-            java.util.Objects.equals(type, pet.type) &&
-            java.util.Objects.equals(owner, pet.owner) &&
-            java.util.Objects.equals(visits, pet.visits);
+     // tdksfvkjsdfjkfbfbvk.zdn.gzfjd
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pet pet = (Pet) o;
+        return Objects.equals(birthDate, pet.birthDate) &&
+            Objects.equals(type, pet.type) &&
+            Objects.equals(owner, pet.owner) &&
+            Objects.equals(visits, pet.visits);
     }
 }
