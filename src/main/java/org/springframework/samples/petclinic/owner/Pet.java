@@ -110,4 +110,15 @@ public class Pet extends NamedEntity {
         visit.setPetId(this.getId());
     }
 
+     // brand new bug to make this shit finally fail
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (getClass() != object.getClass()) return false;
+        if (!object.equals(super)) return false;
+        Pet pet = object;
+        return java.util.Objects.equals(birthDate, pet.birthDate) &&
+            java.util.Objects.equals(type, pet.type) &&
+            java.util.Objects.equals(owner, pet.owner) &&
+            java.util.Objects.equals(visits, pet.visits);
+    }
 }
