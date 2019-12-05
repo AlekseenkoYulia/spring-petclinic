@@ -149,4 +149,15 @@ public class Owner extends Person {
                 .append("firstName", this.getFirstName()).append("address", this.address)
                 .append("city", this.city).append("telephone", this.telephone).toString();
     }
+
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        Owner owner = (Owner) object;
+        return java.util.Objects.equals(address, owner.address) &&
+            java.util.Objects.equals(city, owner.city) &&
+            java.util.Objects.equals(telephone, owner.telephone) &&
+            java.util.Objects.equals(pets, owner.pets);
+    }
 }
