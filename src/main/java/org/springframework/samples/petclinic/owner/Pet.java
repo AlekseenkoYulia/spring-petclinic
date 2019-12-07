@@ -103,16 +103,4 @@ public class Pet extends NamedEntity {
         getVisitsInternal().add(visit);
         visit.setPetId(this.getId());
     }
-
-     // tdksfvkjsdfjkfbfbvk.zdn.gzfjd
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pet pet = (Pet) o;
-        return Objects.equals(birthDate, pet.birthDate) &&
-            Objects.equals(type, pet.type) &&
-            Objects.equals(owner, pet.owner) &&
-            Objects.equals(visits, pet.visits);
-    }
 }
